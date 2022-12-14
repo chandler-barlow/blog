@@ -1,0 +1,22 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'The Chandler Zone'
+theme = "paper"
+
+[params]
+  # color style
+  color = 'linen'                 # linen, wheat, gray, light
+
+  # header social icons
+  twitter = 'ChanChanCanDo'     # twitter.com/YOUR_TWITTER_ID
+  github = 'chandler-barlow'       # github.com/YOUR_GITHUB_ID
+  instagram = 'mistablu' # instagram.com/YOUR_INSTAGRAM_ID
+  rss = true                      # show rss icon with link
+
+  # home page profile
+  avatar = 'chandlerbrlw@gmail.com'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
+  name = 'Chandler Barlow'
+  bio = 'Im a full stack developer based in dallas.'
+
+  # misc
+  monoDarkIcon = true             # show monochrome dark mode icon
