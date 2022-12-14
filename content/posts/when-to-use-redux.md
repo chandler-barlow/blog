@@ -1,6 +1,6 @@
 ---
 title: "When To Use Redux"
-date: 2019-08-12T13:36:29-06:00
+date: 2019-08-12
 draft: false
 ---
 
