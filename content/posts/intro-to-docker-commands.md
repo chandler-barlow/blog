@@ -1,6 +1,6 @@
 ---
-title: "How to Use Javascript Prototypes"
-date: 2021/07/14
+title: "Intro to Docker Commands"
+date: 2021-07-14
 draft: false
 ---
 
