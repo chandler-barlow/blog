@@ -1,6 +1,6 @@
 ---
 title: "Intro to Docker Commands"
-date: 2021-07-14
+date: "2021-07-14"
 draft: false
 ---
 
