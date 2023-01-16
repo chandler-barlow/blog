@@ -4,8 +4,6 @@ date: "2019-08-13T12:00:00 -0600 CST"
 draft: false
 ---
 
-# How to use JavaScript Prototypes
-
 What is the prototype chain? How do we define objects in JavaScript?  
 Part of being a good developer is modularization. Splitting code apart and reusing functionality is key to writing solid maintainable code. One of the tools developers use to split code apart is Classes. In fact Classes are the main way programmers are taught to segment their code. This practice is so popular that many modern programming languages adhere to what’s called the Object Oriented Paradigm. When a language is Object Oriented it means that a majority of the features in the language center around the utilization of and the creation of classes/objects. Classes can inherit properties of other Classes, or even extend their functionality. Classes also get to keep bits of data private and “encapsulated” away from outside code. In the world of programming Object Oriented programming can be incredibly useful.
 
