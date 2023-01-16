@@ -1,6 +1,6 @@
 ---
-title: "When To Use Redux"
-date: 2019-08-12
+title: "How to Use Javascript Prototypes"
+date: 2021-07-14
 draft: false
 ---
 
