@@ -1,6 +1,8 @@
 ---
+author: "Chandler Barlow"
+tags: ["javascript"]
 title: "How to Use Javascript Prototypes"
-date: "2019-08-13T12:00:00 -0600 CST"
+date: "2019-08-13"
 draft: false
 ---
 

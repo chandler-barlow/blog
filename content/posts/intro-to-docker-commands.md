@@ -1,10 +1,10 @@
 ---
+author: "Chandler Barlow"
+tags: ["docker"]
 title: "Intro to Docker Commands"
 date: "2021-07-14"
 draft: false
 ---
-
-# Intro to Docker commands
 
 Docker is a wildly successful solution to a common problem in the computing world.
 
