@@ -1,6 +1,6 @@
 ---
 title: "How to Use Javascript Prototypes"
-date: 2021/07/14
+date: 2019/08/13
 draft: false
 ---
 
