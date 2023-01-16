@@ -1,10 +1,10 @@
-+++
-author = "Chandler Barlow"
-tags = ["react", "javascript"]
-title = "When To Use Redux"
-date = "2019-08-12"
-draft = false
-+++
+---
+author: Chandler Barlow
+tags: [react, javascript]
+title: When To Use Redux
+date: 2019-08-12T19:33:35-06:00
+draft: false
+---
 
 ![image](/redux_img.jpeg)
 When should you use Redux in a React project?  
