@@ -1,8 +1,8 @@
 ---
-author: "Chandler Barlow"
-tags: ["docker"]
-title: "Intro to Docker Commands"
-date: "2021-07-14"
+author: Chandler Barlow
+tags: [docker]
+title: Intro to Docker Commands
+date: 2019-08-13
 draft: false
 ---
 
