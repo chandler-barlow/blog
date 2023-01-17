@@ -105,7 +105,7 @@ Todd.haveBirthdayParty();
 _Accessing attributes from the prototype_  
 This is all made possible via the Prototype Chain. The JavaScript interpreter will create a hierarchy of Prototypes associated with an Object. Whenever an attribute is accessed the interpreter climbs through the hierarchy starting at the bottom and going from parent to parent until it finds the attribute it’s searching for.
 
-![image](/protochain.webp)
+![image](/prototypechain.webp)
 
 We can access the haveBirthdayParty function because it exists on the Prototype Chain for Todd.
 
