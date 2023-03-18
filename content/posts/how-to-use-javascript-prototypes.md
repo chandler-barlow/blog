@@ -1,6 +1,7 @@
 ---
 author: Chandler Barlow
-tags: [javascript]
+tags:
+  - javascript
 title: How to Use Javascript Prototypes
 date: 2021-07-14
 draft: false
@@ -76,7 +77,9 @@ What if we would like to add functionality for our Person object to have a birth
 Person.prototype.haveBirthdayParty = () => {
   let oldAge = this._age;
   this.setAge(oldAge + 1);
-  console.log(`I was ${oldAge} years old, now I'm ${this.getAge()} years old.`);
+  console.log(
+    `I was ${oldAge} years old, now I'm ${this.getAge()} years old.`
+  );
 };
 ```
 
@@ -104,8 +107,6 @@ Todd.haveBirthdayParty();
 
 _Accessing attributes from the prototype_  
 This is all made possible via the Prototype Chain. The JavaScript interpreter will create a hierarchy of Prototypes associated with an Object. Whenever an attribute is accessed the interpreter climbs through the hierarchy starting at the bottom and going from parent to parent until it finds the attribute it’s searching for.
-
-![image](/prototypechain.webp)
 
 We can access the haveBirthdayParty function because it exists on the Prototype Chain for Todd.
 

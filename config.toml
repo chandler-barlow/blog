@@ -1,12 +1,16 @@
 baseURL = '/'
 languageCode = 'en-us'
 title = 'The Chandler Zone'
-theme = "paper"
+theme = "kaslaanka"
 
 [params]
   # color style
   color = 'linen'                 # linen, wheat, gray, light
-
+  sitename = "Chandler Barlow Blog"
+  copyrights = "Chandler Barlow"
+  defaultList = "global"
+  paginationLen = 5
+  brief_about = "<center>This is just your standard dev blog.</center>"
   # header social icons
   twitter = 'ChanChanCanDo'     # twitter.com/YOUR_TWITTER_ID
   github = 'chandler-barlow'       # github.com/YOUR_GITHUB_ID
