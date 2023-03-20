@@ -1,10 +1,12 @@
 ---
 author: Chandler Barlow
-tags:
-  - docker
 title: Intro to Docker Commands
 date: 2019-08-13
-draft: false
+author: Chandler Barlow
+tags: [docker]
+description: "Basic Docker commands"
+showTableOfContents: true
+type: "post"
 ---
 
 Docker is a wildly successful solution to a common problem in the computing world.

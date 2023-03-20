@@ -1,26 +1,82 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'The Chandler Zone'
-theme = "kaslaanka"
+title = 'Chandler Barlow'
+image = '/headshot.png'
+theme = "gokarna"
+enableRobotsTXT = true
+
+[menu]
+	[[menu.main]]
+    identifier = "posts"
+    url = "/posts/"
+    name = "Posts"
+    weight = 1
+	
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "Projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+    
+  [[menu.main]]
+    identifier = "github"
+    url = "https://github.com/chandler-barlow"
+    weight = 3
+    pre = "<span data-feather='github'></span>"
+
+  [[menu.main]]
+    identifier = "linkedin"
+    url = "https://www.linkedin.com/in/chandlerbarlow/"
+    weight = 3
+    pre = "<span data-feather='linkedin'></span>"
+  
+  [[menu.main]]
+    identifier = "twitter"
+    url = "https://twitter.com/ChanChanCanDo/media"
+    weight = 3
+    pre = "<span data-feather='twitter'></span>"
+
 
 [params]
-  # color style
-  color = 'linen'                 # linen, wheat, gray, light
-  sitename = "Chandler Barlow Blog"
-  copyrights = "Chandler Barlow"
-  defaultList = "global"
-  paginationLen = 5
-  brief_about = "<center>This is just your standard dev blog.</center>"
-  # header social icons
-  twitter = 'ChanChanCanDo'     # twitter.com/YOUR_TWITTER_ID
-  github = 'chandler-barlow'       # github.com/YOUR_GITHUB_ID
-  instagram = 'mistablu' # instagram.com/YOUR_INSTAGRAM_ID
-  rss = true                      # show rss icon with link
+  # customHeadHTML = '''
+  #     <favicon href="/favicon.ico" />
+  # '''
+  socialIcons = [
+    {name = "github", url = "https://github.com/chandler-barlow"},
+    {name = "linkedin", url = "https://www.linkedin.com/in/chandlerbarlow/"},
+    {name = "twitter", url = "https://twitter.com/ChanChanCanDo/media"},
+    {name = "npm", url = "https://www.npmjs.com/~chandler-barlow"}
+  ]   
+  
+  # URL for the avatar on homepage
+  avatarURL = "/headshot.png"
 
-  # home page profile
-  avatar = 'chandlerbrlw@gmail.com'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
-  name = 'Chandler Barlow'
-  bio = 'Im a full stack developer based in dallas.'
+  # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
+  avatarSize = "size-m"
 
-  # misc
-  monoDarkIcon = true             # show monochrome dark mode icon
+  # Description to display on homepage
+  description = "Fullstack Developer"
+
+  # Accent color is displayed when you hover over <a> tags
+  accentColor = "#FF4D4D"
+
+  # You can use this to inject any HTML in the <head> tag.
+  # Ideal usecase for this is to import custom js/css or add your analytics snippet
+  customHeadHTML = ""
+
+  # Keywords relevant for SEO
+  metaKeywords = ["blog", "fullstack", "full-stack", "webdev", "web development", "typescript", "javascript", "react", "vue", "golang", "go", "python", "rust", "hugo", "hugo theme", "hugo themes", "hugo gokarna"]
+
+  # If you want to display posts on the homepage, the options are
+  # "popular" (order posts by weight), "recent" (order posts by date)
+  # or "" (do not display, default option)
+  showPostsOnHomePage = "recent"
+
+  # Footer text
+  footer = "Chandler Barlow"      # show monochrome dark mode icon

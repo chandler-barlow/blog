@@ -1,10 +1,11 @@
 ---
 author: Chandler Barlow
-tags:
-  - javascript
-title: How to Use Javascript Prototypes
+tags: [javascript]
+title: "How to Use Javascript Prototypes"
+description: "The low down on prototypes in js"
+showTableOfContents: true
+type: "post"
 date: 2021-07-14
-draft: false
 ---
 
 What is the prototype chain? How do we define objects in JavaScript?  

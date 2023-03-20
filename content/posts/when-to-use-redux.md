@@ -1,11 +1,10 @@
 ---
 author: Chandler Barlow
-tags:
-  - react
-  - javascript
+tags: [react, javascript]
 title: When To Use Redux
-date: 2019-08-12T19:33:35-06:00
-draft: false
+date: 2019-08-12
+description: Knowing when to add redux can be frustrating
+type: "post"
 ---
 
 ![image](/redux_img.jpeg)
