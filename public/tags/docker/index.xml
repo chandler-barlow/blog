@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Chandler Barlow</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in docker on Chandler Barlow</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to Docker Commands</title>
+      <link>/posts/intro-to-docker-commands/</link>
+      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/intro-to-docker-commands/</guid>
+      <description>Docker is a wildly successful solution to a common problem in the computing world.
+But it works on my machine…
+By packaging applications into Docker containers companies can assure that their solutions are going to work on any machine. Using containers lowers the cost and difficulty of deploying software. Containers are portable, easy to use (for the most part), and stable. It’s no surprise that Docker has been, and most likely will continue to be, gaining considerable support.</description>
+    </item>
+    
+  </channel>
+</rss>

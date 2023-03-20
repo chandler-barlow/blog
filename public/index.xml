@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chandler Barlow</title>
+    <link>/</link>
+    <description>Recent content on Chandler Barlow</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Use Javascript Prototypes</title>
+      <link>/posts/how-to-use-javascript-prototypes/</link>
+      <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/how-to-use-javascript-prototypes/</guid>
+      <description>What is the prototype chain? How do we define objects in JavaScript?
+Part of being a good developer is modularization. Splitting code apart and reusing functionality is key to writing solid maintainable code. One of the tools developers use to split code apart is Classes. In fact Classes are the main way programmers are taught to segment their code. This practice is so popular that many modern programming languages adhere to what’s called the Object Oriented Paradigm.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Docker Commands</title>
+      <link>/posts/intro-to-docker-commands/</link>
+      <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/intro-to-docker-commands/</guid>
+      <description>Docker is a wildly successful solution to a common problem in the computing world.
+But it works on my machine…
+By packaging applications into Docker containers companies can assure that their solutions are going to work on any machine. Using containers lowers the cost and difficulty of deploying software. Containers are portable, easy to use (for the most part), and stable. It’s no surprise that Docker has been, and most likely will continue to be, gaining considerable support.</description>
+    </item>
+    
+    <item>
+      <title>When To Use Redux</title>
+      <link>/posts/when-to-use-redux/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/when-to-use-redux/</guid>
+      <description>When should you use Redux in a React project?
+When using React, a state management library like Redux isn&amp;rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used? The main indicator of whether Redux is necessary is how complex the data flow in a project is.
+State can be passed down</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>No Delete ( Text Editor ) This is a text editor that doesn&amp;rsquo;t allow for any deletion of text.
+View Project
+ReX. ReX is a straight forward no frills RegEx command line tool.
+Written in Haskell
+Check it out on github.</description>
+    </item>
+    
+  </channel>
+</rss>
