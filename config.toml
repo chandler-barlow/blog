@@ -1,4 +1,4 @@
-baseURL = 'www.chandlerbarlow.com'
+baseURL = ''
 languageCode = 'en-us'
 title = 'Chandler Barlow'
 image = '/headshot.png'
