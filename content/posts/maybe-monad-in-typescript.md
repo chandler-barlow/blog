@@ -2,7 +2,7 @@
 author: Chandler Barlow
 tags: [monads,typescript,javascript, functional programming]
 title: "Bringing the Maybe Monad to Typescript"
-description: "Implementing the Maybe monad in typescript for fun."
+description: "Implementing the Maybe Monad in Typescript for fun."
 showTableOfContents: true
 type: "post"
 date: 2023-05-12
