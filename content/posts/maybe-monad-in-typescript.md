@@ -24,13 +24,13 @@ Here's the Maybe type definition.
 type Maybe<T> = T | undefined | null;
 ```
 
-This type helps with defining values in code that are potentially missing. For instance, imagine we receive a list of drinks from a server. The list of drinks contains `Drink` objects which contain fields `name`, `color`, and `caffieneContent` ( which may or may not be included based on the drink ). Let's build a function that looks up a drink by `name` and prints the `caffeineContent` value if it exists using the Maybe type.
+This type helps with defining values in code that are potentially missing. For instance, imagine we receive a list of drinks from a server. The list of drinks contains `Drink` objects which contain fields `name`, `color`, and `caffeineContent` ( which may or may not be included based on the drink ). Let's build a function that looks up a drink by `name` and prints the `caffeineContent` value if it exists using the Maybe type.
 
 ```typescript
 type Drink = {
   name: string;
   color: string;
-  caffieneContent: Maybe<number>;
+  caffeineContent: Maybe<number>;
 };
 
 const drinks: Drink[] = [
@@ -49,8 +49,8 @@ const drinks: Drink[] = [
 function lookupCaffeineCont(name: string, drinks: Drink[]): Maybe<number> {
   const drink: Maybe<Drink> = drinks.find((drink) => drink.name === name);
   if(drink !== undefined && drink !== null){
-    if(drink.caffieneContent !== undefined && drink.caffieneContent !== null){
-      return drink.caffieneContent;
+    if(drink.caffeineContent !== undefined && drink.caffeineContent !== null){
+      return drink.caffeineContent;
     }
     return null;
   }
@@ -73,7 +73,7 @@ We can then refactor the previous example.
 type Drink = {
   name: string;
   color: string;
-  caffieneContent: Maybe<number>;
+  caffeineContent: Maybe<number>;
 };
 
 const drinks: Drink[] = [
@@ -92,8 +92,8 @@ const drinks: Drink[] = [
 function lookupCaffeineCont(name: string, drinks: Drink[]): Maybe<number> {
   const drink: Maybe<Drink> = drinks.find((drink) => drink.name === name);
   if(exists(drink)){
-    if(exists(drink.caffieneContent)){
-      return drink.caffieneContent;
+    if(exists(drink.caffeineContent)){
+      return drink.caffeineContent;
     }
     return null;
   }
@@ -162,7 +162,7 @@ We can then use the Monadic Maybe like so.
 type Drink = {
   name: string;
   color: string;
-  caffieneContent: Maybe<number>;
+  caffeineContent: Maybe<number>;
 };
 
 const drinks: Drink[] = [
@@ -179,11 +179,11 @@ const drinks: Drink[] = [
 ];
 
 function lookupCaffeineCont(name: string, drinks: Drink[]): Maybe<number> {
-  const caffiene = 
+  const caffeine = 
     MaybeM.lift(drinks.find((d) => d.name === name))
     .map((drink) => drink.caffeineContent)
     .unwrap();
-  return caffiene;
+  return caffeine;
 }
 ```
 
