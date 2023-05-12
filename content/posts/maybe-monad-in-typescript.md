@@ -201,5 +201,5 @@ const allCaffeine: string[] = drinks.map(drink => {
 
 This will never hit the final logging statement. The Maybe Monad abstracts away the continual/nested checking required when handling potentially missing values!
 
-We use `fMap` because `drink.caffeineContent` is potentially undefined. Because it could be missing we need to lift it into `MaybeM`. `fMap` doesn't wrap the result of it's function in `MaybeM` like `map` does. Using `fMap` allows us to "flatten" our result so that we don't end nested.
+We use `fMap` because `drink.caffeineContent` is potentially undefined. Because it could be missing we need to lift it into `MaybeM`. `fMap` doesn't wrap the result of it's function in `MaybeM` like `map` does. Using `fMap` allows us to "flatten" our result so that we don't end up nested.
 
