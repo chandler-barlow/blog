@@ -4,6 +4,9 @@ description: "Just some of my projects"
 type: "page"
 ---
 
+### Mandelbrot Viewer
+![image](/images/mandelbrot-viewer.png)
+[View Project](/projects/mandle.html)
 ### No Delete ( Text Editor )
 
 This is a text editor that doesn't allow for any deletion of text.  
