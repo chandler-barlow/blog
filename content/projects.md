@@ -7,8 +7,8 @@ type: "page"
 ### Mandelbrot Viewer
 ![image](/images/mandelbrot-viewer.png)
 [View Project](/projects/mandel.html)
+---
 ### No Delete ( Text Editor )
-
 This is a text editor that doesn't allow for any deletion of text.  
 ![image](/images/no-delete.png)  
 [View Project](https://www.no-delete.com)
