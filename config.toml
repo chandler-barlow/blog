@@ -36,11 +36,11 @@ enableRobotsTXT = true
     weight = 3
     pre = "<span data-feather='linkedin'></span>"
   
-  [[menu.main]]
-    identifier = "twitter"
-    url = "https://twitter.com/ChanChanCanDo/media"
-    weight = 3
-    pre = "<span data-feather='twitter'></span>"
+  # [[menu.main]]
+  #   identifier = "twitter"
+  #   url = "https://twitter.com/ChanChanCanDo/media"
+  #   weight = 3
+  #   pre = "<span data-feather='twitter'></span>"
 
 
 [params]
@@ -50,7 +50,7 @@ enableRobotsTXT = true
   socialIcons = [
     {name = "github", url = "https://github.com/chandler-barlow"},
     {name = "linkedin", url = "https://www.linkedin.com/in/chandlerbarlow/"},
-    {name = "twitter", url = "https://twitter.com/ChanChanCanDo/media"},
+    # {name = "twitter", url = "https://twitter.com/ChanChanCanDo/media"},
     {name = "npm", url = "https://www.npmjs.com/~chandler-barlow"}
   ]   
   
