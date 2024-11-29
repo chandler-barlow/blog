@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Bringing the Maybe Monad to Typescript</title>
+    <meta name="description" content="Implementing the Maybe Monad in Typescript for fun.">
+    <meta name="keywords" content='blog, fullstack, full-stack, webdev, web development, typescript, javascript, react, vue, golang, go, python, rust, hugo, hugo theme, hugo themes, hugo gokarna, haskell, functional, monads, functional programming'>
+
+    <meta property="og:url" content="//localhost:1313/posts/maybe-monad-in-typescript/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bringing the Maybe Monad to Typescript">
+    <meta property="og:description" content="Implementing the Maybe Monad in Typescript for fun.">
+    <meta property="og:image" content="">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bringing the Maybe Monad to Typescript">
+    <meta name="twitter:description" content="Implementing the Maybe Monad in Typescript for fun.">
+    <meta property="twitter:domain" content="//localhost:1313/posts/maybe-monad-in-typescript/">
+    <meta property="twitter:url" content="//localhost:1313/posts/maybe-monad-in-typescript/">
+    <meta name="twitter:image" content="">
+
+    
+    <link rel="canonical" href="//localhost:1313/posts/maybe-monad-in-typescript/" />
+
+    <link rel="stylesheet" type="text/css" href="//localhost:1313//css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="//localhost:1313//css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="//localhost:1313//css/dark.css">
+
+    <script src="//localhost:1313//js/svg-injector.min.js"></script>
+    <script src="//localhost:1313//js/feather-icons.min.js"></script>
+    <script src="//localhost:1313//js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="//localhost:1313/">Chandler Barlow</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="//localhost:1313/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="//localhost:1313/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="//localhost:1313/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/chandler-barlow"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.linkedin.com/in/chandlerbarlow/"><span data-feather='linkedin'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://twitter.com/ChanChanCanDo/media"><span data-feather='twitter'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="//localhost:1313/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="//localhost:1313/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="//localhost:1313/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/chandler-barlow"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/chandlerbarlow/"><span data-feather='linkedin'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://twitter.com/ChanChanCanDo/media"><span data-feather='twitter'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Bringing the Maybe Monad to Typescript</h1>
+        <small role="doc-subtitle">Implementing the Maybe Monad in Typescript for fun.</small>
+        <p class="post-date">
+            May 12, 2023
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="//localhost:1313/tags/monads">monads</a></li>
+        
+            <li class="post-tag"><a href="//localhost:1313/tags/typescript">typescript</a></li>
+        
+            <li class="post-tag"><a href="//localhost:1313/tags/javascript">javascript</a></li>
+        
+            <li class="post-tag"><a href="//localhost:1313/tags/functional-programming">functional programming</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <p>Hello! In this blog post I am going to be showing an example of how to implement the Maybe Monad in Typescript. It seems tremendously common for anyone learning functional programming to write their own version of an &ldquo;Explaining Monads&rdquo; blog post. I am glad to keep up the tradition.</p>
+<h3 id="why-worry-about-a-maybe-type-in-the-first-place">Why worry about a Maybe type in the first place?</h3>
+<p>Good question! The day to day work of a web developer requires handling all kinds of values that may, or may not exist. Using a consistent unambiguous pattern for handling these potentially missing values is incredibly helpful. It not only makes your code easier to read, but less prone to errors as well.</p>
+<p>Without further adieu, let&rsquo;s get into it.</p>
+<h4 id="the-maybe-type">The Maybe type</h4>
+<p>The Maybe type is actually rather simple. It is either a value of type T or nothing. Nothing being either <code>null</code> or <code>undefined</code> in Javascript land.</p>
+<p>Here&rsquo;s the Maybe type definition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Maybe</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
+</span></span></code></pre></div><p>This type helps with defining values in code that are potentially missing. For instance, imagine we receive a list of drinks from a server. The list of drinks contains <code>Drink</code> objects which contain fields <code>name</code>, <code>color</code>, and <code>caffeineContent</code> ( which may or may not be included based on the drink ). Let&rsquo;s build a function that looks up a drink by <code>name</code> and prints the <code>caffeineContent</code> value if it exists using the Maybe type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Drink</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[] <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;coffee&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;black&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">79</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sprite&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;clear&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lookupCaffeineCont</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[])<span style="color:#f92672">:</span> <span style="color:#a6e22e">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drink</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">Drink</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">drinks</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">drink</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">drink</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">drink</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="unwrapping-the-maybe-type">Unwrapping the Maybe type</h2>
+<p>In this example the <code>Maybe</code> type saves us time by not forcing us to explicitly type each potentially missing value. At each step we have to handle each <code>Maybe</code> value before moving on. These if statements are kind of messy. To help clean this up we can use a helper function <code>exists</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">exists</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">T</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">val</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">Exclude</span>&lt;<span style="color:#f92672">T</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">null</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">undefined</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can then refactor the previous example.<br>
+<em>Note: It is possible to combine both if statements into a single statement, but I want each step to be discernible. This will help with understanding what the Maybe Monad is abstracting away.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Drink</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[] <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;coffee&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;black&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">79</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sprite&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;clear&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lookupCaffeineCont</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[])<span style="color:#f92672">:</span> <span style="color:#a6e22e">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drink</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">Drink</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">drinks</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">drink</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">drink</span>)){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span>)){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is quite cumbersome and annoying to deal with though. This tactic require wrapping every resulting value in a Maybe type, un-boxing it, using the un-boxed value, and then repeating.</p>
+<h3 id="the-monad--abstracting-away-unwrapping-and-re-wrapping-maybe-">The Monad ( Abstracting away unwrapping and re-wrapping Maybe )</h3>
+<p>It turns out that a Monad is actually exactly what we need to abstract away all of this annoying un-boxing stuff.</p>
+<p>The Maybe Monad includes four functions.</p>
+<p><em>map</em>: This unwraps the <code>MaybeM</code> type, injects it into a function <code>T -&gt; R</code> and wraps it into a <code>MaybeM</code> type on return. If the inner value is <code>Nothing</code> then it just immediately returns <code>Nothing</code>.</p>
+<p><em>fMap:</em> This function takes a function of type <code>T -&gt; MaybeM&lt;R&gt;</code>. It un-boxes the internal value of MaybeM and injects the un-boxed value into the given function if the internal value is defined. If the internal value is undefined fMap just returns <code>MaybeM.none()</code>. None being a valid member of <code>MaybeM&lt;R&gt;</code>.</p>
+<p><em>lift:</em> This function takes some value of type T and returns <code>Maybe&lt;T&gt;</code>.</p>
+<p><em>unwrap</em>: This just unwraps the inner value. Generally Monads don&rsquo;t provide a function to do this, but <code>unwrap</code> makes using the monad in Typescript easier.</p>
+<h3 id="the-implementation">The Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">T</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">val</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">T</span>&gt;;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">T</span>&gt;) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">lift</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">T</span>&gt;){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">value</span>)){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">some</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#a6e22e">value</span>: <span style="color:#66d9ef">R</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">lift</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#a6e22e">value</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">none</span>&lt;<span style="color:#f92672">R</span>&gt;(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">lift</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fMap</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#a6e22e">fn</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">arg</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">R</span>&gt;)<span style="color:#f92672">:</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">R</span>&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">exists</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>)){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">none</span>&lt;<span style="color:#f92672">R</span>&gt;();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">map</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#a6e22e">fn</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">arg</span>: <span style="color:#66d9ef">T</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">R</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">MaybeM</span>&lt;<span style="color:#f92672">R</span>&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">exists</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>)){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">some</span>&lt;<span style="color:#f92672">R</span>&gt;(<span style="color:#a6e22e">fn</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">none</span>&lt;<span style="color:#f92672">R</span>&gt;();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">unwrap</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">val</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="usage-of-maybem">Usage of MaybeM</h3>
+<p>We can then use the Monadic Maybe like so.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Drink</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[] <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;coffee&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;black&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">79</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sprite&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;clear&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">caffeineContent</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lookupCaffeineCont</span>(<span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">drinks</span>: <span style="color:#66d9ef">Drink</span>[])<span style="color:#f92672">:</span> <span style="color:#a6e22e">Maybe</span>&lt;<span style="color:#f92672">number</span>&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">caffeine</span> <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">lift</span>(<span style="color:#a6e22e">drinks</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">d</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">name</span>))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">drink</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">unwrap</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">caffeine</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We could even find the caffeine content for every drink, determine if it is high, and make a new list of all high caffeine drinks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allCaffeine</span>: <span style="color:#66d9ef">string</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">drinks</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">drink</span> <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">level</span>: <span style="color:#66d9ef">Maybe</span>&lt;<span style="color:#f92672">string</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">lift</span>(<span style="color:#a6e22e">drink</span>)
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">fMap</span>(<span style="color:#a6e22e">drink</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">MaybeM</span>.<span style="color:#a6e22e">lift</span>(<span style="color:#a6e22e">drink</span>.<span style="color:#a6e22e">caffeineContent</span>))
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">caff</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">caff</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;HIGH&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;LOW&#34;</span> )
+</span></span><span style="display:flex;"><span>                              .<span style="color:#a6e22e">unwrap</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">exists</span>(<span style="color:#a6e22e">level</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">level</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;N/A&#34;</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>This will never hit the final logging statement. The Maybe Monad abstracts away the continual/nested checking required when handling potentially missing values!</p>
+<p>We use <code>fMap</code> because <code>drink.caffeineContent</code> is potentially undefined. Because it could be missing we need to lift it into <code>MaybeM</code>. <code>fMap</code> doesn&rsquo;t wrap the result of it&rsquo;s function in <code>MaybeM</code> like <code>map</code> does. Using <code>fMap</code> allows us to &ldquo;flatten&rdquo; our result so that we don&rsquo;t end up nested.</p>
+
+        </p>
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#why-worry-about-a-maybe-type-in-the-first-place">Why worry about a Maybe type in the first place?</a></li>
+      </ul>
+    </li>
+    <li><a href="#unwrapping-the-maybe-type">Unwrapping the Maybe type</a>
+      <ul>
+        <li><a href="#the-monad--abstracting-away-unwrapping-and-re-wrapping-maybe-">The Monad ( Abstracting away unwrapping and re-wrapping Maybe )</a></li>
+        <li><a href="#the-implementation">The Implementation</a></li>
+        <li><a href="#usage-of-maybem">Usage of MaybeM</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+  
+</footer>
+</body>
+</html>

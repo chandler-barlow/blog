@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Chandler Barlow</title>
+    <link>//localhost:1313/tags/react/</link>
+    <description>Recent content in React on Chandler Barlow</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When To Use Redux</title>
+      <link>//localhost:1313/posts/when-to-use-redux/</link>
+      <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/when-to-use-redux/</guid>
+      <description>When should you use Redux in a React project?&#xA;When using React, a state management library like Redux isn&amp;rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used? The main indicator of whether Redux is necessary is how complex the data flow in a project is.&#xA;State can be passed down</description>
+    </item>
+  </channel>
+</rss>
