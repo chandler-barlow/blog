@@ -38,7 +38,7 @@ enableRobotsTXT = true
   
   [[menu.main]]
     identifier = "twitter"
-    url = "https://"
+    url = "https://bsky.app/profile/chanchancando.bsky.social"
     weight = 3
     pre = "<span data-feather='twitter'></span>"
 
