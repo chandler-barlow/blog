@@ -1,0 +1,38 @@
+[[entries]]
+title = "All posts"
+
+  [entries.post_list]
+  limit = 10
+  show_more = true
+  show_more_text = "See archive..."
+  show_more_url = "posts"
+
+[[entries]]
+title = "Projects"
+
+  [[entries.entries]]
+  title = "groq-hs"
+  url = "https://github.com/chandler-barlow/groq-hs"
+
+  [[entries.entries]]
+  title = "janet-hs"
+  url = "https://github.com/chandler-barlow/janet-hs"
+
+  [[entries.entries]]
+  title = "miso-bulma"
+  url = "https://github.com/chandler-barlow/miso-bulma"
+[[entries]]
+title = "Contact"
+
+  [[entries.entries]]
+  title = "github"
+  url = "https://github.com/chandler-barlow"
+
+  [[entries.entries]]
+  title = "linkedin"
+  url = "https://www.linkedin.com/in/chandlerbarlow/"
+
+# [[entries]]
+# title = "rss"
+# url = "index.xml"
+
