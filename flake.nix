@@ -37,6 +37,11 @@
                 name = "start-dev";
                 command = "hugo server -D";
               }
+              {
+                help = "create a new post";
+                name = "new-post";
+                command = "hugo new content content/posts/$1.md";
+              }
             ];
             packages = with pkgs; [
               git
