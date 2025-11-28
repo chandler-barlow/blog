@@ -1,209 +1,89 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="
+When should you use Redux in a React project?
+When using React, a state management library like Redux isn&rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used?
+The main indicator of whether Redux is necessary is how complex the data flow in a project is.
+State can be passed down
+State can be passed to child components through props. If a child component needs some information, the parent can simply pass it to them.">  
 
-    <style>
-        :root {
-            --accent-color: #FF4D4D;
-        }
-    </style>
+  <title>
+    
+      When To Use Redux
+    
+  </title>
 
-    
-    
-    
-    
-    
-    
 
-    
-    <title>When To Use Redux</title>
-    <meta name="description" content="Knowing when to add redux can be frustrating">
-    <meta name="keywords" content='blog, fullstack, full-stack, webdev, web development, typescript, javascript, react, vue, golang, go, python, rust, hugo, hugo theme, hugo themes, hugo gokarna, haskell, functional'>
-
-    <meta property="og:url" content="//localhost:1313/posts/when-to-use-redux/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="When To Use Redux">
-    <meta property="og:description" content="Knowing when to add redux can be frustrating">
-    <meta property="og:image" content="">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="When To Use Redux">
-    <meta name="twitter:description" content="Knowing when to add redux can be frustrating">
-    <meta property="twitter:domain" content="//localhost:1313/posts/when-to-use-redux/">
-    <meta property="twitter:url" content="//localhost:1313/posts/when-to-use-redux/">
-    <meta name="twitter:image" content="">
-
-    
-    <link rel="canonical" href="//localhost:1313/posts/when-to-use-redux/" />
-
-    <link rel="stylesheet" type="text/css" href="//localhost:1313//css/normalize.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" type="text/css" href="//localhost:1313//css/main.css">
-    <link disabled id="dark-theme" rel="stylesheet" href="//localhost:1313//css/dark.css">
-
-    <script src="//localhost:1313//js/svg-injector.min.js"></script>
-    <script src="//localhost:1313//js/feather-icons.min.js"></script>
-    <script src="//localhost:1313//js/main.js"></script>
-
-    
-    
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.900100e9dbee2d56c58fac8bb717037cae7e26a9c36c29d2ff587bdd65f0cbbe510b41d81a3bb234919cdfdc7550d786b2fab70c8fc507772d732fe097106d12.css" integrity="sha512-kAEA6dvuLVbFj6yLtxcDfK5&#43;JqnDbCnS/1h73WXwy75RC0HYGjuyNJGc39x1UNeGsvq3DI/FB3ctcy/glxBtEg==" />
+  
 </head>
-<body>
-        <script type="text/javascript">
-            
-            setThemeByUserPref();
-        </script><header class="header">
-    <nav class="header-nav">
+<body a="light">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
 
-        
 
-        <div class="nav-title">
-            <a class="nav-brand" href="//localhost:1313/">Chandler Barlow</a>
-        </div>
+<article>
+    <p class="post-meta">
+        <time datetime="2019-08-12 00:00:00 &#43;0000 UTC">
+            2019-08-12
+        </time>
+    </p>
 
-        <div class="nav-links">
-            
-            <div class="nav-link">
-                <a href="//localhost:1313/posts/"> Posts </a>
-            </div>
-            
-            <div class="nav-link">
-                <a href="//localhost:1313/projects/"> Projects </a>
-            </div>
-            
-            <div class="nav-link">
-                <a href="//localhost:1313/tags/"> Tags </a>
-            </div>
-            
-            <div class="nav-link">
-                <a href="https://github.com/chandler-barlow"><span data-feather='github'></span>  </a>
-            </div>
-            
-            <div class="nav-link">
-                <a href="https://www.linkedin.com/in/chandlerbarlow/"><span data-feather='linkedin'></span>  </a>
-            </div>
-            
-            <div class="nav-link">
-                <a href="https://twitter.com/ChanChanCanDo/media"><span data-feather='twitter'></span>  </a>
-            </div>
-            
+    <h1>When To Use Redux</h1>
 
-            <span class="nav-icons-divider"></span>
-            <div class="nav-link dark-theme-toggle">
-                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
-                <a>
-                    <span id="theme-toggle-icon" data-feather="moon"></span>
-                </a>
-            </div>
+    
 
-            <div class="nav-link" id="hamburger-menu-toggle">
-                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
-                <a>
-                    <span data-feather="menu"></span>
-                </a>
-            </div>
-
-            
-            <ul class="nav-hamburger-list visibility-hidden">
-                
-                <li class="nav-item">
-                    <a href="//localhost:1313/posts/"> Posts </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="//localhost:1313/projects/"> Projects </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="//localhost:1313/tags/"> Tags </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="https://github.com/chandler-barlow"><span data-feather='github'></span>  </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="https://www.linkedin.com/in/chandlerbarlow/"><span data-feather='linkedin'></span>  </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="https://twitter.com/ChanChanCanDo/media"><span data-feather='twitter'></span>  </a>
-                </li>
-                
-                <li class="nav-item dark-theme-toggle">
-                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
-                    <a>
-                        <span id="theme-toggle-icon" data-feather="moon"></span>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-</header>
-<main id="content">
-    <div class="post container">
-    <div class="post-header-section">
-        <h1>When To Use Redux</h1>
-        <small role="doc-subtitle">Knowing when to add redux can be frustrating</small>
-        <p class="post-date">
-            August 12, 2019
-        </p>
-
-        <ul class="post-tags">
-        
-            <li class="post-tag"><a href="//localhost:1313/tags/react">react</a></li>
-        
-            <li class="post-tag"><a href="//localhost:1313/tags/javascript">javascript</a></li>
-        
-        </ul>
-    </div>
-
-    <div class="post-content">
-        <p>
-            <p><img src="/redux_img.jpeg" alt="image">
+    <p><img src="/redux_img.jpeg" alt="image">
 When should you use Redux in a React project?<br>
 When using React, a state management library like Redux isn&rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used?
 The main indicator of whether Redux is necessary is how complex the data flow in a project is.<br>
 <strong>State can be passed down</strong><br>
 State can be passed to child components through props. If a child component needs some information, the parent can simply pass it to them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">component</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">render</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span> <span style="color:#a6e22e">prop</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">value</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">passed</span> <span style="color:#a6e22e">down</span>}<span style="color:#f92672">/&gt;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#000;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#5317ac">class</span> Parent <span style="color:#5317ac">extends</span> React.component(){
+</span></span><span style="display:flex;"><span>    render() {
+</span></span><span style="display:flex;"><span>        <span style="color:#5317ac">return</span> <span style="color:#00538b">&lt;</span>Child prop <span style="color:#00538b">=</span> {value to be passed down}<span style="color:#00538b">/&gt;</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>or as a functional component</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parent</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span> <span style="color:#a6e22e">prop</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">value</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">passed</span> <span style="color:#a6e22e">down</span>}<span style="color:#f92672">/&gt;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#000;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#5317ac">const</span> parent <span style="color:#00538b">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#5317ac">return</span> <span style="color:#00538b">&lt;</span>Child prop <span style="color:#00538b">=</span> {value to be passed down}<span style="color:#00538b">/&gt;</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>If your project only requires passing data downwards I don&rsquo;t recommend adding Redux. Redux could hurt in this case if you aren&rsquo;t already familiar with it. Passing data downwards is pretty easy in React and I don&rsquo;t think an outside solution is necessary. React is designed around passing state downwards.<br>
 Okay, so passing data down is easy, but what if a project needs a child to pass information upwards to their parent? This could be quite the puzzle to inexperienced React developers. The problem being in React child components are completely isolated from their parent. Data can only be passed to the child, not the other way around. The most common way to address this issue is by a parent component passing a callback function as a prop to its child. The callback function can be called from the child to interact with the parent. The idea is that if the child needs to communicate with its parent, it can do so through the callback.<br>
 State can be passed upwards</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Parent</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">component</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">callback</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+<div class="highlight"><pre tabindex="0" style="color:#000;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#5317ac">class</span> Parent <span style="color:#5317ac">extends</span> React.component() {
+</span></span><span style="display:flex;"><span>  callback() {
+</span></span><span style="display:flex;"><span>    <span style="color:#5317ac">return</span>;
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span>{() =&gt; {
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">callback</span>();
+</span></span><span style="display:flex;"><span>  render() {
+</span></span><span style="display:flex;"><span>    <span style="color:#5317ac">return</span> (
+</span></span><span style="display:flex;"><span>      <span style="color:#00538b">&lt;</span>Child
+</span></span><span style="display:flex;"><span>        prop<span style="color:#00538b">=</span>{() =&gt; {
+</span></span><span style="display:flex;"><span>          callback();
 </span></span><span style="display:flex;"><span>        }}
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#00538b">/&gt;</span>
 </span></span><span style="display:flex;"><span>    );
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Again this is possible in functional components</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Parent</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+<div class="highlight"><pre tabindex="0" style="color:#000;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#5317ac">const</span> Parent <span style="color:#00538b">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#5317ac">const</span> callback <span style="color:#00538b">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#5317ac">return</span>;
 </span></span><span style="display:flex;"><span>  };
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Child</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">prop</span><span style="color:#f92672">=</span>{() =&gt; {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">callback</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#5317ac">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#00538b">&lt;</span>Child
+</span></span><span style="display:flex;"><span>      prop<span style="color:#00538b">=</span>{() =&gt; {
+</span></span><span style="display:flex;"><span>        callback();
 </span></span><span style="display:flex;"><span>      }}
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00538b">/&gt;</span>
 </span></span><span style="display:flex;"><span>  );
 </span></span><span style="display:flex;"><span>};
 </span></span></code></pre></div><p>Passing data upwards is achievable and not too difficult to manage, but still, things can get complicated quickly. What once was a simple project can now be difficult to debug or add anything new to. Functions will be scattered through child components. Tracking errors and information flow becomes a headache. This can leave developers asking.
@@ -241,21 +121,16 @@ When to use Redux:</p>
 </ul>
 <p>In summary, if you&rsquo;ve never used Redux and your project just requires passing state downwards, then don&rsquo;t worry about Redux. You should still learn to use it (or a different state management library like Mobx) because you&rsquo;ll need some form of state management someday, but today is not that day. If your project requires passing data between multiple components in multiple directions, or through multiple children, it&rsquo;s better to just add Redux now and save yourself the headache.</p>
 
-        </p>
-        
-    </div>
+</article>
 
-    <div class="prev-next">
-        
-    </div>
-</div>
-
-
-
+                
+    
+    
+        &ldquo;Lisp isn&rsquo;t a language, it&rsquo;s a building material.&rdquo; - Alan Kay
     
 
-        </main><footer class="footer">
-  
-</footer>
-</body>
+
+            </div>
+        </main>
+    </body>
 </html>

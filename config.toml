@@ -1,79 +1,9 @@
 baseURL = ''
 languageCode = 'en-us'
 title = 'Chandler Barlow'
-# image = '/headshot.png'
-theme = "gokarna"
+theme = "nostyleplease"
 enableRobotsTXT = true
 
-[menu]
-	[[menu.main]]
-    identifier = "posts"
-    url = "/posts/"
-    name = "Posts"
-    weight = 1
-	
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "Projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 2
-    
-  [[menu.main]]
-    identifier = "github"
-    url = "https://github.com/chandler-barlow"
-    weight = 3
-    pre = "<span data-feather='github'></span>"
-
-  [[menu.main]]
-    identifier = "linkedin"
-    url = "https://www.linkedin.com/in/chandlerbarlow/"
-    weight = 3
-    pre = "<span data-feather='linkedin'></span>"
-  
-  [[menu.main]]
-    identifier = "twitter"
-    url = "https://bsky.app/profile/chanchancando.bsky.social"
-    weight = 3
-    pre = "<span data-feather='twitter'></span>"
-
-
-[params]
-  socialIcons = [
-    {name = "github", url = "https://github.com/chandler-barlow"},
-    {name = "linkedin", url = "https://www.linkedin.com/in/chandlerbarlow/"},
-    {name = "twitter", url = "https://bsky.app/profile/chanchancando.bsky.social"},
-    {name = "npm", url = "https://www.npmjs.com/~chandler-barlow"}
-  ]   
-  
-  # URL for the avatar on homepage
-  # avatarURL = "/headshot.png"
-
-  # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
-  avatarSize = "size-m"
-
-  # Description to display on homepage
-  # description = "Fullstack Developer"
-
-  # Accent color is displayed when you hover over <a> tags
-  accentColor = "#FF4D4D"
-
-  # You can use this to inject any HTML in the <head> tag.
-  # Ideal usecase for this is to import custom js/css or add your analytics snippet
-  customHeadHTML = ""
-
-  # Keywords relevant for SEO
-  metaKeywords = ["blog", "fullstack", "full-stack", "webdev", "web development", "typescript", "javascript", "react", "vue", "golang", "go", "python", "rust", "hugo", "hugo theme", "hugo themes", "hugo gokarna", "haskell", "functional"]
-
-  # If you want to display posts on the homepage, the options are
-  # "popular" (order posts by weight), "recent" (order posts by date)
-  # or "" (do not display, default option)
-  showPostsOnHomePage = "recent"
-
-  # Footer text
-  footer = "Chandler Barlow"      # show monochrome dark mode icon
+[markup]
+  [markup.highlight]
+    style = 'modus-operandi'

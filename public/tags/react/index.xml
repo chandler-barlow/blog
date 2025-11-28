@@ -13,7 +13,7 @@
       <link>//localhost:1313/posts/when-to-use-redux/</link>
       <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/when-to-use-redux/</guid>
-      <description>When should you use Redux in a React project?&#xA;When using React, a state management library like Redux isn&amp;rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used? The main indicator of whether Redux is necessary is how complex the data flow in a project is.&#xA;State can be passed down</description>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/redux_img.jpeg&#34; alt=&#34;image&#34;&gt;&#xA;When should you use Redux in a React project?&lt;br&gt;&#xA;When using React, a state management library like Redux isn&amp;rsquo;t always necessary. Out of the box React provides a few solutions for managing state. Therefore, not every React project requires Redux. So, when should Redux be used?&#xA;The main indicator of whether Redux is necessary is how complex the data flow in a project is.&lt;br&gt;&#xA;&lt;strong&gt;State can be passed down&lt;/strong&gt;&lt;br&gt;&#xA;State can be passed to child components through props. If a child component needs some information, the parent can simply pass it to them.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

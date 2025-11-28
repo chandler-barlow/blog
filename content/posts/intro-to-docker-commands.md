@@ -2,7 +2,6 @@
 author: Chandler Barlow
 title: Intro to Docker Commands
 date: 2019-08-13
-author: Chandler Barlow
 tags: [docker]
 description: "Basic Docker commands"
 showTableOfContents: true
